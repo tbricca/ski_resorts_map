@@ -1,0 +1,31 @@
+{
+  "name": "ski_resorts_map",
+  "version": "1.0.0",
+  "description": "A map of ski resorts in the PNW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbricca/ski_resorts_map.git"
+  },
+  "author": "Tony Bricca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbricca/ski_resorts_map/issues"
+  },
+  "homepage": "https://github.com/tbricca/ski_resorts_map#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "express-ejs-layouts": "^2.3.1",
+    "pg": "^6.4.1",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.83.0",
+    "rowdy-logger": "^1.0.0",
+    "sequelize": "^3.30.4"
+  }
+}
