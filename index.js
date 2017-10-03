@@ -14,10 +14,10 @@ var app = express();
 
 
 app.set('view engine', 'ejs');
-
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-app.use(express.static(__dirname + '/public'));
+
 
 app.get('/', function(req, res){
   request("https://maps.googleapis.com/maps/api/js?key=" + process.env.DB_PASS + "&callback=initMap", function (error, response, body){
