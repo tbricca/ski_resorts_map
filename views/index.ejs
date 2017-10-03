@@ -2,3 +2,31 @@
 <h1>Ski Resorts</h1>
 
 <div id="map"></div>
+
+<script>
+// $(function(){
+// var map = mapData;
+var initMap = function() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+  // var options = {
+    center: {lat: 47.755653, lng: -122.341515},
+    zoom: 10
+  });
+}
+// })
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwFm72lurxDke4bowaBD3QazJp3PrX1r8&callback=initMap">
+  // $(function() {
+  //   var initMap = function() {
+  //     var map = new google.maps.Map(document.getElementById('map'), {
+  //       // var options = {
+  //       center: {lat: 47.755653, lng: -122.341515},
+  //       zoom: 10
+  //     });
+  //     console.log(map);
+  //   }
+  //
+  //   initMap();
+  // })
+</script>
