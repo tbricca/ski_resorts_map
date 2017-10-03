@@ -4,6 +4,7 @@
     <div class="col-sm-4">
     This is where ski resort info will go
     </div>
+
     <div class="col-sm-8">
       <div id="map"></div>
     </div
@@ -15,6 +16,20 @@
           center: {lat: 47.755653, lng: -122.341515},
           zoom: 6
         });
+        var marker = new google.maps.Marker({
+         map: map,
+         draggable: true,
+         animation: google.maps.Animation.DROP,
+         position: {lat: 46.9282, lng: -121.5045}
+       });
+       marker.addListener('click', toggleBounce);
+      }
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
       }
 
       </script>
