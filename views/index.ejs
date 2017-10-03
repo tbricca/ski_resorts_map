@@ -10,27 +10,34 @@
     </div
   </div>
       <script>
-
+      var locations = [
+        ['Crystal Mountain ',46.9282, -121.5045, 1],
+        ['Stevens Pass', 47.74502, -121.091864, 2],
+        ['Mount Baker', 48.8584576, -121.6770853, 3]
+      ];
       var initMap = function() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 47.755653, lng: -122.341515},
           zoom: 6
         });
-        var marker = new google.maps.Marker({
-         map: map,
-         draggable: true,
-         animation: google.maps.Animation.DROP,
-         position: {lat: 46.9282, lng: -121.5045}
-       });
-       marker.addListener('click', toggleBounce);
-      }
-      function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-      }
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+         marker = new google.maps.Marker({
+           position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+           map: map
+         });
+
+         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+           return function() {
+             infowindow.setContent(locations[i][0]);
+             infowindow.open(map, marker);
+           }
+         })(marker, i));
+       }
+     }
+
 
       </script>
       <script async defer
