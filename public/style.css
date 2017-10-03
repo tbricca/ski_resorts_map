@@ -1,4 +1,12 @@
 #map {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 800px;
+}
+.col-sm-4 {
+  background-color: blue;
+  height: 100%;
+}
+.col-sm-8 {
+  background-color: green;
+  height: 100%;
 }
