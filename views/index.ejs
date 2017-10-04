@@ -18,8 +18,10 @@
       var initMap = function() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 47.755653, lng: -122.341515},
-          zoom: 6
+          zoom: 7,
+          mapTypeId: 'terrain'
         });
+
         var infowindow = new google.maps.InfoWindow();
         var marker, i;
 
@@ -36,6 +38,7 @@
            }
          })(marker, i));
        }
+
      }
 
 
