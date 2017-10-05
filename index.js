@@ -28,6 +28,7 @@ app.get('/', function(req, res){
   });
 });
 
+app.use('/auth', require('./controllers/auth'));
 
 app.listen(3000);
 

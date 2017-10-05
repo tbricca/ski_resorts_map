@@ -8,7 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      
       name: {
         type: Sequelize.STRING
       },
@@ -19,9 +18,6 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING
-      },
-      password2: {
         type: Sequelize.STRING
       },
       createdAt: {

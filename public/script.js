@@ -6,3 +6,20 @@ var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10
   });
 }
+
+$("#signup-button").click(function(){
+  console.log( 'signup' ); ///here doesn't work
+  $.ajax({
+    url:"/auth/signup",
+    type:"POST",
+    data:{
+      name:"gary",
+      email:"gary@Joe.com",
+      city:"garysville",
+      password:"joe",
+    },
+    success: function(result) {
+      console.log("success");
+    }
+  });
+})
