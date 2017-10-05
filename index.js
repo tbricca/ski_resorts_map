@@ -6,6 +6,7 @@ var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
 var request = require('request');
 var app = express();
+var session = require('express-session');
 
 // db.connect({
 //   password: process.env.DB_PASS

@@ -5,15 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ski Resorts Map</title>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
       <% include partials/header %>
 
   </head>
   <body>
-    
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Login/Signup</h4>
+            </div>
+            <div class="modal-body">
+              <h2>Login</h2>
+              	<form class="form" method="post" action="/login">
+              		<input type="text" class="input-top form-control" name="email" placeholder="Enter Your Email">
+              		<input type="password" class="log-input-btm form-control" name="password" placeholder="Enter Your Password">
+              		<input type="submit" value="Login" class="sign-log-btn pull-right btn btn-primary">
+              	</form>
+              	<h2>Sign Up</h2>
+              		<form class="form" method="post" action="/signup">
+              		<input type="text" class="input-top form-control" name="name" placeholder="Enter Your Name">
+              		<input type="text" class="input-mid-top form-control" name="email" placeholder="Enter Your Email">
+                  <input type="text" class="input-mid-top form-control" name="city" placeholder="Enter Your City">
+              		<input type="password" class="input-mid-btm form-control" name="password" placeholder="Enter Your Password">
+              		<input type="password" class="input-btm form-control" name="password2" placeholder="Re-Enter Your Password">
+              		<input type="submit" value="Sign-Up" class="sign-log-btn pull-right btn btn-primary">
+              		<br><br>
+              	</form>
+              
+            </div>
+            <div id="login-outer" class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Login/Signup</h4>
+                    </div>
+                    <div class="modal-body">
+                      <h2>Login</h2>
+                        <form class="form" method="post" action="/login">
+                          <input type="text" class="input-top form-control" name="email" placeholder="Enter Your Email">
+                          <input type="password" class="log-input-btm form-control" name="password" placeholder="Enter Your Password">
+                          <input type="submit" value="Login" class="sign-log-btn pull-right btn btn-primary">
+                        </form>
+                        <h2>Sign Up</h2>
+                          <form class="form" method="post" action="/signup">
+                          <input type="text" class="input-top form-control" name="name" placeholder="Enter Your Name">
+                          <input type="text" class="input-mid-top form-control" name="email" placeholder="Enter Your Email">
+                          <input type="text" class="input-mid-top form-control" name="city" placeholder="Enter Your City">
+                          <input type="password" class="input-mid-btm form-control" name="password" placeholder="Enter Your Password">
+                          <input type="password" class="input-btm form-control" name="password2" placeholder="Re-Enter Your Password">
+                          <input type="submit" value="Sign-Up" class="sign-log-btn pull-right btn btn-primary">
+                          <br><br>
+                        </form>
+                      <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
     <%-body%>
 
   </body>
