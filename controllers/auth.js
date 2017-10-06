@@ -1,20 +1,20 @@
 var express = require('express');
-var db = require('../models');
 var router = express.Router();
+// at the very top, include the database models
+var db = require('../models');
 var passport = require('../config/ppConfig');
+var isLoggedIn = require('./middleware/isLoggedIn');
 
-router.post('/signup', function(req, res) {
-  console.log('signup success')
+router.get('/signup', function(req, res) {
   res.render('auth/signup');
 });
 router.post('/signup', function(req, res) {
-db.user.findOrCreate({
+  // find or create a user, providing the name and password as default values
+  db.user.findOrCreate({
     where: { email: req.body.email },
     defaults: {
-    name: req.body.name,
-    email: req.body.email,
-    city: req.body.city,
-    password: req.body.password,
+      name: req.body.name,
+      password: req.body.password
     }
   }).spread(function(user, created) {
     if (created) {
@@ -36,6 +36,10 @@ db.user.findOrCreate({
   });
 });
 
+
+router.get('/login', function(req, res) {
+  res.render('auth/login');
+});
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
