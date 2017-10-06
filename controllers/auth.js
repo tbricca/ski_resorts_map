@@ -3,7 +3,7 @@ var router = express.Router();
 // at the very top, include the database models
 var db = require('../models');
 var passport = require('../config/ppConfig');
-var isLoggedIn = require('./middleware/isLoggedIn');
+var isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/signup', function(req, res) {
   res.render('auth/signup');

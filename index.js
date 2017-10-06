@@ -23,13 +23,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 
-app.get('/', function(req, res){
-  request("https://maps.googleapis.com/maps/api/js?key=" + process.env.DB_PASS + "&callback=initMap", function (error, response, body){
-    if (!error && response.statusCode == 200) {
-      res.render('index', {mapData:body})
-    }
-  });
-});
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -50,9 +43,15 @@ var passport = require('./config/ppConfig');
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/', function(req, res) {
-  res.render('index');
+///routes
+app.get('/', function(req, res){
+  request("https://maps.googleapis.com/maps/api/js?key=" + process.env.DB_PASS + "&callback=initMap", function (error, response, body){
+    if (!error && response.statusCode == 200) {
+      res.render('index', {mapData:body})
+    }
+  });
 });
+
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
