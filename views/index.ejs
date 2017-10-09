@@ -13,21 +13,31 @@
       <div class="embed-responsive embed-responsive-4by3">
         <div id="map"class="embed-responsive-item"></div>
       </div>
-    </div
+    </div>
   </div>
       <script>
+      var locationName;
+      var lattitude;
+      var longitude;
+      var information;
+
 function initMap() {
       var locations = [
-        {title:'Crystal Mountain Ski Resort',latLng:{lat:46.9282, lng:-121.5045}, info: 'Number of Lifts:11\nDay Ticket Price:$72'},
-        {title: 'Stevens Pass Ski Resort',latLng:{lat:47.74502, lng:-121.091864}, info: 'Number of Lifts:10\nDay Ticket Price:$72'},
-
-        // ['Stevens Pass', 47.74502, -121.091864, 2],
-        // ['Mount Baker', 48.8584576, -121.6770853, 3],
-        // ['Hurricane Ridge', 47.971496114, -123.51749793, 4],
-        // ['The Summit at Snoqualamie', 47.424, -121.416, 5],
-        // ['Mission Ridge', 47.28833218, -120.392665096, 6],
-        // ['White Pass', 48.0331683, -121.1495473, 7],
-        // ['Alpental', 47.4431678, -121.4295388, 8]
+        {title:'Crystal Mountain Ski Resort',latLng:{lat:46.9282, lng:-121.5045}, info: 'Number of Lifts: 11\nDay Ticket Price: $72'},
+        {title: 'Stevens Pass Ski Resort',latLng:{lat:47.74502, lng:-121.091864}, info: 'Number of Lifts: 10\nDay Ticket Price: $74'},
+        {title: 'Hurricane Ridge',latLng:{lat:47.971496114, lng:-123.51749793}, info: 'Number of Lifts: 3\nDay Ticket Price: $34'},
+        {title: 'The Summit at Snoqualamie',latLng:{lat:47.424, lng:-121.416}, info: 'Number of Lifts: 27\nDay Ticket Price: $74'},
+        {title: 'Mission Ridge Ski Resort',latLng:{lat:47.28833218, lng:-120.392665096}, info: 'Number of Lifts: 6\nDay Ticket Price: $59'},
+        {title: 'White Pass Ski Resort',latLng:{lat:48.0331683, lng:-121.1495473}, info: 'Number of Lifts: 8\nDay Ticket Price: $63'},
+        {title: 'Alpental Ski Resort',latLng:{lat:47.4431678, lng:-121.4295388}, info: 'Number of Lifts: 4\nDay Ticket Price: $66'},
+        {title: 'Mt. Baker Ski Resort',latLng:{lat:48.8584576, lng:-121.6770853}, info: 'Number of Lifts: 8\nDay Ticket Price: $59'},
+        {title: 'Whistler Ski Resort',latLng:{lat:50.116322, lng:-122.957359}, info: 'Number of Lifts: 34\nDay Ticket Price: $135'},
+        {title: 'Mt.Washington Ski Resort',latLng:{lat:49.738333, lng:-125.29861}, info: 'Number of Lifts: 34\nDay Ticket Price: $85 CAD'},
+        {title: 'Mt. Seymour Ski Resort',latLng:{lat:49.393333, lng:-122.944444}, info: 'Number of Lifts: 34\nDay Ticket Price: $56 CAD'},
+        {title: 'Grouse Mountain Ski Resort',latLng:{lat:49.38499846, lng:-123.07249971}, info: 'Number of Lifts: 34\nDay Ticket Price: $78 CAD'},
+        {title: 'Cypress Mountain Ski Resort',latLng:{lat:49.33889, lng:-122.80778}, info: 'Number of Lifts: 34\nDay Ticket Price: $78 CAD'},
+        // {title: 'Hemlock Resort',latLng:{lat:50.116322, lng:-122.957359}, info: 'Number of Lifts: 34\nDay Ticket Price: $50 CAD'},
+        // {title: 'Manning Park Resort',latLng:{lat:50.116322, lng:-122.957359}, info: 'Number of Lifts: 34\nDay Ticket Price: $55 CAD'},
       ];
       // <button type='submit' class='btn btn-primary btn-sm addButton'>Add to List</button>
       var mapCenter = {lat: 47.755653, lng: -122.341515};
@@ -51,10 +61,14 @@ function initMap() {
 
          google.maps.event.addListener(marker,'click',(function(marker, i){
            return function(){
+             locationName = locations[i].title;
+             lattitude = locations[i].latLng.lat;
+             longitude = locations[i].latLng.lng;
+             information = locations[i].info;
              contentString =
                '<div id="content">'+'<h4>'+locations[i].title+'</h4>'+'<div id="bodyContent">'+
                '<p>'+locations[i].info.replace(/\n/g, "<br />")+'</p>'+
-                '</div>'+
+                '</div>'+ "<button onclick='addToFavorites()' class='btn btn-primary btn-sm addButton'>Add to Favorites</button>"+
             '</div>';
             infowindow.setContent(contentString);
             infowindow.open(map, marker);
@@ -63,6 +77,24 @@ function initMap() {
        }
 
   }
+        function addToFavorites() {
+          $.ajax({
+            type:"POST",
+            url: "/favorites",
+            data:{
+              name:locationName,
+              lat:lattitude,
+              lng:longitude,
+              info:information
+            },
+            success: function(data){
+              console.log("success");
+            },
+            error:function(err){
+              console.log("err");
+            }
+        });
+      }
 
 
       </script>

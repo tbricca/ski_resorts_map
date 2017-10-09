@@ -1,8 +1,16 @@
-var bcrypt = require ('bcrypt');
+var bcrypt = require ("bcrypt");
 
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var user = sequelize.define('user', {
+    email: {
+      type:DataTypes.STRING,
+      validate:{
+        isEmail: {
+          msg:'Invalid Email Address'
+        }
+      }
+    },
     name: {
       type: DataTypes.STRING,
       validate: {
@@ -12,32 +20,17 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    email: {
-    type:DataTypes.STRING,
-    validate:{
-      isEmail: {
-        msg:'Invalid Email Address'
-      }
-    }
-  },
-  city: {
-    type:DataTypes.STRING,
-    validate:{
-      isCity: {
-      }
-    }
-  },
-  password: {
+    password: {
       type: DataTypes.STRING,
       validate: {
         len: {
-          args: [5,99],
-          msg: 'Password must be over 5 characters long'
+          args: [8,99],
+          msg: 'Password must be between 8 and 99 characters'
         }
       }
     }
   }, {
-    hooks: {
+     hooks: {
       beforeCreate: function(createdUser, options, cb) {
         // hash the password
         var hash = bcrypt.hashSync(createdUser.password, 10);
@@ -50,6 +43,7 @@ module.exports = (sequelize, DataTypes) => {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+        models.user.hasMany(models.favorite);
       }
     },
     instanceMethods: {
