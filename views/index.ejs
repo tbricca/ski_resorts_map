@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
     <h1> Ski Resort Name </h1>
     <h2>Dope Photo of Resort </h2>
     <h3> Number of Lifts: </h3>
@@ -9,7 +9,7 @@
     <h4> This is where the attention grabbing decription will be </h4>
     </div>
 
-    <div class="col-sm-8">
+    <div class="col-sm-9">
       <div class="embed-responsive embed-responsive-4by3">
         <div id="map"class="embed-responsive-item"></div>
       </div>
@@ -45,7 +45,7 @@ function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: mapCenter,
-          zoom: 7,
+          zoom: 6,
           mapTypeId: 'terrain'
         });
 
@@ -56,8 +56,16 @@ function initMap() {
         for (i = 0; i < locations.length; i++) {
          marker = new google.maps.Marker({
            position: locations[i].latLng,
+           animation: google.maps.Animation.DROP,
            map: map
          });
+         function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
 
          google.maps.event.addListener(marker,'click',(function(marker, i){
            return function(){
