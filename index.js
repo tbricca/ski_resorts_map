@@ -13,15 +13,11 @@ var isLoggedIn = require('./middleware/isLoggedIn');
 //   password: process.env.DB_PASS
 // })
 
-
-
 app.set('view engine', 'ejs');
-
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
-
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -45,16 +41,21 @@ app.use(passport.session());
 
 ///routes
 app.get('/', function(req, res){
-  request("https://maps.googleapis.com/maps/api/js?key=" + process.env.DB_PASS + "&callback=initMap", function (error, response, body){
-    if (!error && response.statusCode == 200) {
-      res.render('index', {mapData:body})
-    }
-  });
+      var username;
+      if (req.session.passport && req.session.passport.user) {
+        username = req.session.passport.user;
+      }
+      res.render('index', {username:username})
+
 });
 
 
 app.get('/profile', isLoggedIn, function(req, res) {
-  res.render('profile');
+  var username;
+  if (req.session.passport && req.session.passport.user) {
+    username = req.session.passport.user;
+  }
+  res.render('profile',{username:username});
 });
 
 app.use('/auth', require('./controllers/auth'));

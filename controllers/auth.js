@@ -6,8 +6,13 @@ var passport = require('../config/ppConfig');
 var isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/signup', function(req, res) {
-  res.render('auth/signup');
+  var username;
+  if (req.session.passport && req.session.passport.user) {
+    username = req.session.passport.user;
+  }
+  res.render('auth/signup',{username:username});
 });
+
 router.post('/signup', function(req, res) {
   // find or create a user, providing the name and password as default values
   db.user.findOrCreate({
@@ -38,7 +43,11 @@ router.post('/signup', function(req, res) {
 
 
 router.get('/login', function(req, res) {
-  res.render('auth/login');
+  var username;
+  if (req.session.passport && req.session.passport.user) {
+    username = req.session.passport.user;
+  }
+  res.render('auth/login',{username:username});
 });
 
 router.post('/login', passport.authenticate('local', {
@@ -46,7 +55,8 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/auth/login',
   failureFlash: 'Invalid username and/or password',
   successFlash: 'You have logged in'
-}));
+  })
+);
 
 router.get('/logout', function(req, res) {
   req.logout();

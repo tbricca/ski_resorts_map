@@ -17,7 +17,10 @@
                   <ul class="nav navbar-nav">
                       <li><a href="/auth/login">Login</a></li>
                       <li><a href="/auth/signup">Signup</a></li>
-
+                      <% if (username){ %>
+                      <li><a href="/favorites">Profile</a></li>
+                      <li><a href="/auth/logout">Logout</a></li>
+                      <% } %>
                   </ul>
               </div>
           </div>
