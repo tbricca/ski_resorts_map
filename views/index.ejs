@@ -100,6 +100,7 @@ function initMap() {
             },
             success: function(data){
               console.log("success");
+              window.location = data.redirect;
             },
             error:function(err){
               console.log(err);

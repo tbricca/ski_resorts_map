@@ -6,6 +6,7 @@ var passport = require('../config/ppConfig');
 var isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/signup', function(req, res) {
+  console.log('the new chevy tahoe');
   var username;
   if (req.session.passport && req.session.passport.user) {
     username = req.session.passport.user;

@@ -34,6 +34,7 @@ function deleteFavorite(id) {
       },
       success: function(data){
         console.log("success");
+        window.location = "/favorites"
       },
       error:function(err){
         console.log(err);
