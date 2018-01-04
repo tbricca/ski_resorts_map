@@ -32,9 +32,7 @@
  app into it. It taught me to better plan and wireframe what my process will be, even if I'm not 100% set on how I want the functionality to be.   
 
  ## Next Steps:
- I intend to continue working on this project and improve it. I think there is a lot for me to learn, and a lot of useful functionality that i can add. I would like
- to first trouble shoot my preventDefault function and then eventually add a Google Places Api layer to get information about the resorts. I would also like to have
- the ski resort information on the backend.
+ I intend to continue working on this project and improve it. I think there is a lot for me to learn, and a lot of useful functionality that i can add. I woudl like to add more ski resorts in the region as well as additional functionality for the user.
 
  ## Screenshot 
  
