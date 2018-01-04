@@ -31,9 +31,10 @@
  Creating my modeels later made things more difficult. It showed my indecsion over what models I wanted along with my log in/log out functionality. I had to figure out how to properly configure the app I already had to the framework I needed to add. Rather than, building the framework and then build the
  app into it. It taught me to better plan and wireframe what my process will be, even if I'm not 100% set on how I want the functionality to be.   
 
- ## Next Steps:
- I intend to continue working on this project and improve it. I think there is a lot for me to learn, and a lot of useful functionality that i can add. I woudl like to add more ski resorts in the region as well as additional functionality for the user.
-
  ## Screenshot 
  
  ![Ski Resorts](ski.jpg)
+
+ ## Next Steps:
+ 
+ I intend to continue working on this project and improve it. I think there is a lot for me to learn, and a lot of useful functionality that i can add. I woudl like to add more ski resorts in the region as well as additional functionality for the user.
