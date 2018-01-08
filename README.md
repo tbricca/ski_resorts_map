@@ -35,6 +35,8 @@
  
  ![Ski Resorts](ski.jpg)
 
+ 1[Ski Resort Info](ski-info.jpg)
+
  ## Next Steps:
  
  I intend to continue working on this project and improve it. I think there is a lot for me to learn, and a lot of useful functionality that i can add. I woudl like to add more ski resorts in the region as well as additional functionality for the user.
