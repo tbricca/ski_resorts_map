@@ -16,7 +16,7 @@
 .bgimage {
   width:100%;
   height:500px;
-  background: url('https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c');
+  background-image: url('hero4.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
@@ -37,4 +37,7 @@
 
 .hero-text {
   color: white;
+  background: rgba(96, 125, 139, .4);
+  padding: 40px;
+  border-radius: 10px;
 }

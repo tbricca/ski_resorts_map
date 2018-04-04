@@ -4,23 +4,21 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h1 class="hero-text">Pacific Northwest Ski Resort Finder</h1>
-        <h3 class="hero-text">Here's a no nonsense map of the ski resorts in the Pacific Northwest</h3> 
+        <h3 class="hero-text">A no nonsense map of the ski resorts in the Pacific Northwest</h3> 
        <p><a href="#" class="btn btn-primary btn-large">Learn more »</a></p> */
       </div>
     </div>
   </div>
 </section>
-<div class="container">
-  
+
+
+
   <div class="row the-first">
-    <div class="col-sm-3">
-    <h1>Welcome!</h1>
-    <p> 
-    </p>
-
+    <div class="col-sm-2">
+      <h1>Click and add Ski Resorts to your favorites list!</h1>
     </div>
-
-    <div class="col-sm-9">
+<div class="divider"></div>
+    <div class="col-sm-10">
       <div class="embed-responsive embed-responsive-4by3">
         <div id="map"class="embed-responsive-item"></div>
       </div>
@@ -32,7 +30,7 @@
       var longitude;
       var information;
 
-function initMap() {
+  function initMap() {
       var locations = [
         {title:'Crystal Mountain Ski Resort',latLng:{lat:46.9282, lng:-121.5045}, info: 'Number of Lifts: 11\nDay Ticket Price: $72'},
         {title: 'Stevens Pass Ski Resort',latLng:{lat:47.74502, lng:-121.091864}, info: 'Number of Lifts: 10\nDay Ticket Price: $74'},
