@@ -48,5 +48,15 @@
 }
 
 .numberCount {
-  display: inline;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+skiNumber {
+  display: inline-block;
+}
+
+stateNumber {
+  display: inline-block;
 }
