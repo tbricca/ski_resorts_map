@@ -17,7 +17,7 @@
 
  
   
-   <div class="ski">
+   <div class="container ski">
    
    <h1> <span class="Count">24</span> Ski Resorts in the Pacific Northwest </h1>
    </div>
@@ -35,25 +35,25 @@
       </div>
     </div>
   </div>
-      <script>
+  <script>
 
 
-      var locationName;
-      var lattitude;
-      var longitude;
-      var information;
+  var locationName;
+  var lattitude;
+  var longitude;
+  var information;
 
- $('.Count').each(function () {
-   $(this).prop('Counter', 0).animate({
-     Counter: $(this).text()
-   }, {
-     duration: 3000,
-     easing: 'swing',
-     step: function (now) {
-       $(this).text(Math.ceil(now));
-     }
-   });
- });
+  $('.Count').each(function () {
+    $(this).prop('Counter', 0).animate({
+      Counter: $(this).text()
+    }, {
+      duration: 3000,
+      easing: 'swing',
+      step: function (now) {
+        $(this).text(Math.ceil(now));
+      }
+    });
+  });
 
   function initMap() {
       var locations = [
@@ -69,9 +69,14 @@
         {title: 'Mt.Washington Ski Resort',latLng:{lat:49.738333, lng:-125.29861}, info: 'Number of Lifts: 34\nDay Ticket Price: $85 CAD'},
         {title: 'Mt. Seymour Ski Resort',latLng:{lat:49.393333, lng:-122.944444}, info: 'Number of Lifts: 34\nDay Ticket Price: $56 CAD'},
         {title: 'Grouse Mountain Ski Resort',latLng:{lat:49.38499846, lng:-123.07249971}, info: 'Number of Lifts: 34\nDay Ticket Price: $78 CAD'},
-        {title: 'Cypress Mountain Ski Resort',latLng:{lat:49.33889, lng:-122.80778}, info: 'Number of Lifts: 34\nDay Ticket Price: $78 CAD'},
-        // {title: 'Hemlock Resort',latLng:{lat:50.116322, lng:-122.957359}, info: 'Number of Lifts: 34\nDay Ticket Price: $50 CAD'},
-        // {title: 'Manning Park Resort',latLng:{lat:50.116322, lng:-122.957359}, info: 'Number of Lifts: 34\nDay Ticket Price: $55 CAD'},
+        {title: 'Cypress Mountain Ski Resort',latLng:{lat:49.395556, lng:-123.203333}, info: 'Number of Lifts: 9\nDay Ticket Price: $60 CAD'},
+        {title: 'Sasquatch Mountain Resort',latLng:{lat:49.376944, lng:-121.935}, info: 'Number of Lifts: 4\nDay Ticket Price: $60 CAD'},
+        {title: 'Manning Park Resort',latLng:{lat:49.066667, lng:-120.783333}, info: 'Number of Lifts: 4\nDay Ticket Price: $55 CAD'},
+        {title: 'Timberline Lodge',latLng:{lat:45.331111, lng:-121.71}, info: 'Number of Lifts: 5\nDay Ticket Price: $71'},
+        {title: 'Mt. Hood Skibowl',latLng:{lat:45.30189, lng:-121.773212}, info: 'Number of Lifts: 8\nDay Ticket Price: $53'},
+        {title: 'Mt. Hood Meadows',latLng:{lat:45.328889, lng:-121.6625}, info: 'Number of Lifts: 6\nDay Ticket Price: $82'},
+        {title: 'Anthony Lakes Ski Resort',latLng:{lat:44.9637, lng:-118.2348}, info: 'Number of Lifts: 3\nDay Ticket Price: $35'},
+
       ];
       // <button type='submit' class='btn btn-primary btn-sm addButton'>Add to List</button>
       var mapCenter = {lat: 47.755653, lng: -122.341515};
@@ -119,27 +124,27 @@
        }
 
   }
-        function addToFavorites() {
-          $.ajax({
-            type:"POST",
-            url: "/favorites",
-            data:{
-              name:locationName,
-              lat:lattitude,
-              lng:longitude,
-              info:information
-            },
-            success: function(data){
-              console.log("success");
-              window.location = data.redirect;
-            },
-            error:function(err){
-              console.log(err);
-            }
-        });
-      }
-      </script>
-      </div>
+      function addToFavorites() {
+        $.ajax({
+          type:"POST",
+          url: "/favorites",
+          data:{
+            name:locationName,
+            lat:lattitude,
+            lng:longitude,
+            info:information
+          },
+          success: function(data){
+            console.log("success");
+            window.location = data.redirect;
+          },
+          error:function(err){
+            console.log(err);
+          }
+      });
+    }
+    </script>
+    </div>
       <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwFm72lurxDke4bowaBD3QazJp3PrX1r8&callback=initMap">
       </script>
