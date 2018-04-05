@@ -15,18 +15,11 @@
   <li class="divider"></li>
    <span class="divider"></span>
 
-  <script>
-    jQuery(document).ready(function($) {
-      $('.counter').counterUp({
-        console.log('here');
-        delay: 10,
-        time: 1000
-      });
-    });
-  </script>
+ 
+  
    <div class="ski">
-   <span class="counter">24</span>
-   <h1> Ski Resorts in the Pacific Northwest </h1>
+   
+   <h1> <span class="Count">24</span> Ski Resorts in the Pacific Northwest </h1>
    </div>
 
 
@@ -43,10 +36,24 @@
     </div>
   </div>
       <script>
+
+
       var locationName;
       var lattitude;
       var longitude;
       var information;
+
+ $('.Count').each(function () {
+   $(this).prop('Counter', 0).animate({
+     Counter: $(this).text()
+   }, {
+     duration: 3000,
+     easing: 'swing',
+     step: function (now) {
+       $(this).text(Math.ceil(now));
+     }
+   });
+ });
 
   function initMap() {
       var locations = [
