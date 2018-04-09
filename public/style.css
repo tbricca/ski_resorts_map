@@ -48,6 +48,12 @@
   border-radius: 10px;
 }
 
+.divider-text {
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+}
+
 .numberCount {
   display: inline-block;
   text-align: center;
@@ -55,7 +61,9 @@
 }
 
 skiNumber {
-  display: inline-block;
+  margin: auto;
+  justify-content: center;
+  display: flex;
 }
 
 stateNumber {
