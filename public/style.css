@@ -64,4 +64,8 @@ stateNumber {
 
 .numberCount {
   background: rgba(96, 125, 139, .4);
+  /* display: block; */
+  margin: auto;
+  justify-content: center;
+  display: flex;
 }
