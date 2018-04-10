@@ -5,11 +5,15 @@
 }
 .the-first {
   background-color: aqua;
+  margin-bottom: 100px;
 }
 #map {
   height: 1000px;
   width: 900px;
-  padding-top: 100px;
+  /* padding-top: 100px; */
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 .col-sm-4 {
   background-color: blue;
