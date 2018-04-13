@@ -46,6 +46,15 @@
 .hero-text {
   background: rgba(96, 125, 139, .4);
 }
+.hero-header {
+  font-weight: 400;
+  font-size: 60px;
+}
+
+.hero-subheader {
+  font-size: 30px;
+  font-weight: 300;
+}
 
 .divider-text, .hero-text {
   color: white;
