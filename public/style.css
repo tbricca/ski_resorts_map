@@ -5,7 +5,7 @@
 }
 .the-first {
   background-color: aqua;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 #map {
   height: 800px;
@@ -46,6 +46,11 @@
 .hero-text {
   background: rgba(96, 125, 139, .4);
 }
+.primary-text {
+  color:white;
+  padding: 40px;
+  border-radius: 10px;
+}
 .hero-header {
   font-weight: 400;
   font-size: 60px;
@@ -56,10 +61,9 @@
   font-weight: 300;
 }
 
-.divider-text, .hero-text {
-  color: white;
-  padding: 40px;
-  border-radius: 10px;
+.divider-text {
+  font-weight: 400;
+  font-size: 45px;
 }
 
 /* .numberCount {
