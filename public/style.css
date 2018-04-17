@@ -3,6 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+.navbar-nav {
+  text-transform: uppercase;
+  font-size: 110%;
+}
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-size: 150%;
+}
+
 .the-first {
   background-color: aqua;
   /* margin-bottom: 100px; */
@@ -21,19 +31,25 @@
 }
 .col-sm-8, .col-sm-4 {
   height: 100%;
+  letter-spacing: 1px;
 }
 
 
 .bgimage {
   width:100%;
   height:500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero4.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero4.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   
 }
+
+h1, h3, p {
+  margin: 0;
+}
+
 .bgimage h5 {
   color:white;
   text-shadow:2px 2px #333;
@@ -113,5 +129,4 @@ stateNumber {
   margin-left: auto;
   margin-right: auto;
 }
-
 
