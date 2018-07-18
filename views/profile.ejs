@@ -1,24 +1,26 @@
 <div id="list-outer" class="container col-md-6 col-sm-6 col-md-offset-3 col-md-offset-4">
 
-<h1 id="fav-list-h1"><%= currentUser %> Favorite Resorts</h1>
+  <h1 id="fav-list-h1"><%= currentUser %> Favorite Resorts</h1>
 
-<table class="table">
-        <thead>
-            <tr>
-                <th>Resort</th>
-                <th>Resort Info</th>
-            </tr>
-        </thead>
-        <tbody>
-          <% favorites.forEach(function(item){ %>
-            <tr>
-              <td><%= item.name %></td>
-              <td><%= item.info %></td>
-              <td><button onclick='deleteFavorite(<%= item.id %>)' class='btn btn-primary btn-sm deleteButton <%= item.name %>'>Delete</button></td>
-            </tr>
-          <% }) %>
-        </tbody>
-</table>
+  <table class="table">
+          <thead>
+              <tr>
+                  <th>Resort</th>
+                  <th>Resort Info</th>
+              </tr>
+          </thead>
+          <tbody>
+            <% favorites.forEach(function(item){ %>
+              <tr>
+                <td><%= item.name %></td>
+                <td><%= item.info %></td>
+                <td><button onclick='deleteFavorite(<%= item.id %>)' class='btn btn-primary btn-sm deleteButton <%= item.name %>'>Delete</button></td>
+              </tr>
+            <% }) %>
+          </tbody>
+  </table>
+  <div>
+
 
 <script>
 // $(".deleteButton").click(

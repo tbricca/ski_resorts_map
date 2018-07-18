@@ -14,49 +14,38 @@
 
 
   
- 
   
   <div class="container numberCount col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <h1 class="divider-text primary-text">The Pacific Northwest consists of:</h1>
-    
-    <div class="block">
-      <h1 class="count"><strong>24</strong></h1><h2 class="count-name"> Ski Resorts </h2>
-    </div>
-    <div class="block">
-      <h1 class="count"><strong>5</strong></h1><h2 class="count-name"> Mountain Ranges </h2>
-    </div>
-    <div class="block">
-      <h1 class="count"><strong>3</strong></h1><h2 class="count-name"> States </h2>
-    </div>
-    <div class="block">
-      <h1 class="count"><strong>2</strong></h1><h2 class="count-name"> Countries </h2>
-    </div>
+      <h1 class="divider-text primary-text">The Pacific Northwest consists of:</h1>
       
-  </div>
-  
-
-  
-
-  <div class="row the-first">
-     <div class="container">
-     
-      
-        
-      
-
-      
-        
-          <div id="map"class="embed-responsive-item-21by10">
-          </div>
-
-
-
-        
-
-        
+      <div class="block">
+        <h1 class="count"><strong>24</strong></h1><h2 class="count-name"> Ski Resorts </h2>
       </div>
-    </div>
+      <div class="block">
+        <h1 class="count"><strong>5</strong></h1><h2 class="count-name"> Mountain Ranges </h2>
+      </div>
+      <div class="block">
+        <h1 class="count"><strong>3</strong></h1><h2 class="count-name"> States </h2>
+      </div>
+      <div class="block">
+        <h1 class="count"><strong>2</strong></h1><h2 class="count-name"> Countries </h2>
+      </div>
+      
   </div>
+  
+
+  
+     <div class="row the-first">
+      <div id="map"class="embed-responsive-item-21by10">
+          </div>
+     </div>
+     
+        
+          
+
+     
+    
+ 
 
   <script>
 
@@ -147,7 +136,7 @@
        }
 
   }
-      function addToFavorites() {
+    function addToFavorites() {
         $.ajax({
           type:"POST",
           url: "/favorites",

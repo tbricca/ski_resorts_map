@@ -13,60 +13,64 @@
   font-size: 150%;
 }
 
-
 /* Background section w/ Map ////////////////// */
 
 .the-first {
   background-color: aqua;
   /* margin-bottom: 100px; */
+  padding-bottom: 10%;
 }
 #map {
   height: 800px;
   width: 95%;
-  /* width: 600px; */ 
+  margin: 0 auto 0 auto;
+  /* width: 600px; */
   /* padding-top: 100px; */
-  margin-top: 50px;
-  margin-bottom: 100px;
+  /* margin-top: 50px;
+  margin-bottom: 100px; */
+
   /* padding-right: 50px; */
 }
 .col-sm-4 {
   background-color: blue;
 }
-.col-sm-8, .col-sm-4 {
+.col-sm-8,
+.col-sm-4 {
   height: 100%;
   letter-spacing: 1px;
 }
 
-
 .bgimage {
-  width:100%;
-  height:500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero4.jpeg');
+  width: 100%;
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("hero4.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  
 }
 
-h1, h3, p {
+h1,
+h3,
+p {
   margin: 0;
 }
 
 .bgimage h5 {
-  color:white;
-  text-shadow:2px 2px #333;
+  color: white;
+  text-shadow: 2px 2px #333;
 }
 
-.navbar-custom, .footer {
-  background-color:rgb(40,46,50);
+.navbar-custom,
+.footer {
+  background-color: rgb(40, 46, 50);
   border-color: black;
   color: white;
 }
 
-
 .primary-text {
-  color:white;
+  color: white;
   padding: 40px;
   border-radius: 10px;
 }
@@ -85,15 +89,14 @@ h1, h3, p {
   font-size: 45px;
 }
 
-
 .numberCount {
-  background: rgba(96, 125, 139, .4);
+  background: rgba(96, 125, 139, 0.4);
   position: relative;
   text-align: center;
   margin: 10px auto;
   vertical-align: top;
   padding-bottom: 50px;
- 
+
   /* justify-content: center;
   display: flex; */
 }
@@ -106,7 +109,6 @@ h1, h3, p {
   padding: 20px 20px;
   padding-bottom: 30px;
   /* border: black dotted; */
-
 }
 
 .block h1 {
@@ -127,3 +129,8 @@ stateNumber {
   margin-right: auto;
 }
 
+/* Profile Page */
+
+#list-outer {
+  padding-bottom: 50px;
+}
