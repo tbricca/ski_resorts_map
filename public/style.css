@@ -17,19 +17,12 @@
 
 .the-first {
   background-color: aqua;
-  /* margin-bottom: 100px; */
   padding-bottom: 10%;
 }
 #map {
   height: 800px;
   width: 95%;
   margin: 0 auto 0 auto;
-  /* width: 600px; */
-  /* padding-top: 100px; */
-  /* margin-top: 50px;
-  margin-bottom: 100px; */
-
-  /* padding-right: 50px; */
 }
 .col-sm-4 {
   background-color: blue;
@@ -96,9 +89,6 @@ p {
   margin: 10px auto;
   vertical-align: top;
   padding-bottom: 50px;
-
-  /* justify-content: center;
-  display: flex; */
 }
 
 .block {
@@ -108,7 +98,6 @@ p {
   margin: 10px;
   padding: 20px 20px;
   padding-bottom: 30px;
-  /* border: black dotted; */
 }
 
 .block h1 {
@@ -129,7 +118,7 @@ stateNumber {
   margin-right: auto;
 }
 
-/* Profile Page */
+/* Profile Page //// */
 
 #list-outer {
   padding-bottom: 50px;
